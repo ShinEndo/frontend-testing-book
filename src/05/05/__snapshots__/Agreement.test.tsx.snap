@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`インタラクティブなUIコンポーネント Snapshot:利用規約の同意が表示される 1`] = `
+exports[`インタラクティブなUIコンポーネントテスト Snapshot:利用規約の同意が表示される 1`] = `
 <div>
   <fieldset>
     <legend>

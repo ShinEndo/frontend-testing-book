@@ -4,7 +4,7 @@ import { InputAccount } from './InputAccount';
 
 const user = userEvent.setup();
 
-describe('インタラクティブなUIコンポーネント', () => {
+describe('インタラクティブなUIコンポーネントテスト', () => {
 	test('fieldset のアクセシブルネームは、legend を引用している', () => {
 		render(<InputAccount />);
 		expect(

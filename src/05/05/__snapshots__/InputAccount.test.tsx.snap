@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`インタラクティブなUIコンポーネント Snapshot: アカウント情報の入力フォームが表示される 1`] = `
+exports[`インタラクティブなUIコンポーネントテスト Snapshot: アカウント情報の入力フォームが表示される 1`] = `
 <div>
   <fieldset>
     <legend>

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Agreement } from './Agreement';
 
-describe('インタラクティブなUIコンポーネント', () => {
+describe('インタラクティブなUIコンポーネントテスト', () => {
 	test('fieldset のアクセシブルネームは、legemd を引用している', () => {
 		render(<Agreement />);
 		expect(

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`インタラクティブなUIコンポーネント Snapshot: 新規アカウント登録フォームが表示される 1`] = `
+exports[`インタラクティブなUIコンポーネントテスト Snapshot: 新規アカウント登録フォームが表示される 1`] = `
 <div>
   <form
     aria-labelledby=":r4:"
