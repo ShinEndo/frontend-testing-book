@@ -110,7 +110,7 @@ describe('過去のお届け先がある場合', () => {
 		).toBeDisabled();
 	});
 
-	test('「いいえ」を選択・入力・送信すると、入力内容が送信される', async () => {
+	test('「いいえ」を選択、入力、送信すると、入力内容が送信される', async () => {
 		const [mockFn, onSubmit] = mockHandleSubmit();
 		render(
 			<Form deliveryAddresses={deliveryAddresses} onSubmit={onSubmit} />
@@ -127,5 +127,35 @@ describe('過去のお届け先がある場合', () => {
 		expect(mockFn).toHaveBeenCalledWith(
 			expect.objectContaining(inputValues)
 		);
+	});
+
+	test('「はい」を選択、入力、送信すると、入力内容が送信される', async () => {
+		const [mockFn, onSubmit] = mockHandleSubmit();
+		render(
+			<Form deliveryAddresses={deliveryAddresses} onSubmit={onSubmit} />
+		);
+		// 「はい」を選択
+		await user.click(screen.getByLabelText('はい'));
+		expect(
+			screen.getByRole('group', { name: '新しいお届け先' })
+		).toBeInTheDocument();
+		// 入力
+		const contactNumber = await inputContactNumber();
+		const deliveryAddress = await inputDeliveryAddress();
+		// 送信
+		await clickSubmit();
+		expect(mockFn).toHaveBeenCalledWith(
+			expect.objectContaining({
+				...contactNumber,
+				...deliveryAddress,
+			})
+		);
+	});
+
+	test('Snapshot', () => {
+		const { container } = render(
+			<Form deliveryAddresses={deliveryAddresses} />
+		);
+		expect(container).toMatchSnapshot();
 	});
 });
