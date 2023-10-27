@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, logRoles, render, screen } from '@testing-library/react';
 import { Form } from './Form';
 
 describe('はじめのUIコンポーネントテスト', () => {
@@ -21,5 +21,15 @@ describe('はじめのUIコンポーネントテスト', () => {
 		render(<Form name="taro" onSubmit={mockFn} />);
 		fireEvent.click(screen.getByRole('button'));
 		expect(mockFn).toHaveBeenCalled();
+	});
+
+	test('Snapshot: アカウント名「taro」が表示される', () => {
+		const { container } = render(<Form name="taro" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	test('logRoles: レンダリング結果からロールとアクセシブルネームを確認', () => {
+		const { container } = render(<Form name="taro" />);
+		logRoles(container);
 	});
 });
