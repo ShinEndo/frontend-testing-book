@@ -41,6 +41,6 @@ describe('モック関数を使ったスパイ', () => {
 	test('モック関数はテスト対象の引数として使用できる', () => {
 		const mockFn = jest.fn();
 		greet('Jiro', mockFn);
-		expect(mockFn).toHaveBeenCalledWith('Jiro');
+		expect(mockFn).toHaveBeenCalledWith('Hello! Jiro');
 	});
 });

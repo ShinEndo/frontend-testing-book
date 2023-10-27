@@ -25,7 +25,7 @@ describe('アイテム一覧UIコンポーネントテスト', () => {
 		render(<ArticleList items={items} />);
 		const list = screen.getByRole('list');
 		expect(list).toBeInTheDocument();
-		expect(within(list).getAllByRole('listitems')).toHaveLength(3);
+		expect(within(list).getAllByRole('listitem')).toHaveLength(3);
 	});
 
 	test('一覧アイテムが空のとき「投稿記事一覧がありません」が表示される', () => {
